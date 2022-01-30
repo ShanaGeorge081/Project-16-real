@@ -109,26 +109,17 @@ function fruits(){
   if(World.frameCount%80===0){
     position = Math.round(random(1,2));
     fruit=createSprite(400,200,20,20);
-    fruit.velocityX= -(8+(score/10))
     
-     //using random variable change the position of fruit, to make it more challenging
-     
-    if(position==1)
-    {
-    fruit.x=600;
-    //update below give line of code for increase fruitGroup speed by 4
-    fruit.velocityX=-7
-    }
-    else
-    {
-      if(position==2){
-      fruit.x=0;
-      
-     //update below give line of code for increase fruitGroup speed by 4
-      fruit.velocityX= 7;
-      }
-    }
-    
+    if(position==1) { 
+      fruit.x=600; 
+      fruit.velocityX=-(7+(score/4));
+     } else 
+     { 
+       if(position==2)
+       { 
+         fruit.x=0; 
+      //Increase the velocity of fruit after score 4 or 10 
+      fruit.velocityX= (7+(score/4)); } }
     fruit.scale=0.2;
      //fruit.debug=true;
      r=Math.round(random(1,4));
